@@ -1,7 +1,7 @@
 :root {
-  --default-font-color: rgb(255, 234, 0);
+  --default-font-color: rgb(255, 208, 0);
   color: var(--default-font-color);
-  --background-color: #377ba8;
+  --background-color: #20597f;
   --h1-color: var(--default-font-color);
   --a-color: var(--default-font-color);
   --button-background-color: #1CB0F6;
@@ -328,15 +328,15 @@ a {
 
     
 .level-selector input[type="radio"].intermediate:checked+label {
-  --button-background-color: rgb(255, 166, 0);
-  --button-shadow-color: rgb(226, 147, 0);
+  --button-background-color: rgb(225, 124, 0);
+  --button-shadow-color: rgb(177, 98, 1);
   --button-color: black;
 }
 
 
 .level-selector input[type="radio"].expert:checked+label {
-  --button-background-color: rgb(255, 102, 0);
-  --button-shadow-color: rgb(224, 90, 0);
+  --button-background-color: rgb(255, 25, 0);
+  --button-shadow-color: rgb(201, 21, 1);
   --button-color: black;
 }
 
