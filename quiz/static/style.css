@@ -1,7 +1,9 @@
 :root {
-  --background-color: white;
-  --h1-color: #377ba8;
-  --a-color: #377ba8;
+  --default-font-color: rgb(255, 234, 0);
+  color: var(--default-font-color);
+  --background-color: #377ba8;
+  --h1-color: var(--default-font-color);
+  --a-color: var(--default-font-color);
   --button-background-color: #1CB0F6;
   --button-shadow-color: #1899D6;
   --button-color: #FFFFFF;
