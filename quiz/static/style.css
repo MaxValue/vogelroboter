@@ -2,9 +2,13 @@
   --background-color: white;
   --h1-color: #377ba8;
   --a-color: #377ba8;
-  --button-background-color: #1899D6;
-  --button-shadow-color: #1CB0F6;
+  --button-background-color: #1CB0F6;
+  --button-shadow-color: #1899D6;
   --button-color: #FFFFFF;
+  --unselected-button-background-color: rgb(179, 179, 179);
+  --unselected-button-shadow-color: rgb(153, 152, 152);
+  --selected-button-background-color: LimeGreen;
+  --selected-button-shadow-color: rgb(43, 180, 43);
 }
 
 html {
@@ -171,7 +175,7 @@ input[type=submit] {
 
 .button-19 {
   appearance: button;
-  background-color: var(--button-background-color);
+  background-color: var(--button-shadow-color);
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -204,7 +208,7 @@ input[type=submit] {
 
 .button-19:after {
   background-clip: padding-box;
-  background-color: var(--button-shadow-color);
+  background-color: var(--button-background-color);
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -292,4 +296,42 @@ a {
 
 .bold {
   font-weight: 700;
+}
+
+.level-selector input[type="radio"] {
+  display: none;
+}
+
+.level-selector label {
+  --button-background-color: var(--unselected-button-background-color);
+  --button-shadow-color: var(--unselected-button-shadow-color);
+}
+
+/* .level-selector input[type="radio"]:checked+label {
+  --button-background-color: var(--selected-button-background-color);
+}
+
+.level-selector input[type="radio"]:checked+label:after {
+  --button-background-color: var(--selected-button-background-color);
+  --button-shadow-color: var(--selected-button-shadow-color);
+} */
+
+.level-selector input[type="radio"].beginner:checked+label {
+  --button-background-color: rgb(247, 247, 0);
+  --button-shadow-color: rgb(224, 224, 3);
+  --button-color: black;
+  }
+
+    
+.level-selector input[type="radio"].intermediate:checked+label {
+  --button-background-color: rgb(255, 166, 0);
+  --button-shadow-color: rgb(226, 147, 0);
+  --button-color: black;
+}
+
+
+.level-selector input[type="radio"].expert:checked+label {
+  --button-background-color: rgb(255, 102, 0);
+  --button-shadow-color: rgb(224, 90, 0);
+  --button-color: black;
 }
