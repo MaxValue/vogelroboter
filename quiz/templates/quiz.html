@@ -4,30 +4,28 @@
 
 {% block nav %}<!-- keeps nav from main template from showing --> {% endblock %}
 {% block content %}
-    <div class="main-content">
-        {% set question = p.questions[p.question_num - 1] %}
-        {% set solution_bird = question.options[question.solution] %}
-        <p class="centerpad" style="font-size:24px; text-align: center;">
-            {{ p.question_num }}) Welcher Vogel ist das? 
-        </p>
-        <div class="question-flex">
-            <div class="question-flex-item actual-question">
-                {% if p.mode == "audio" %}
-                <div>
-                    <img style="float: left; margin-right: 0.4em;" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].son }}" alt="Sonogram of the call of the bird" >
-                    <audio controls loading="lazy" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].ruf }}"></audio><br>
-                </div>
-                {% else %}
-                <img style="float: left; margin-right: 0.4em;" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].img }}" alt="image of a bird" >
-                {% endif %}
-            </div>
-            <ul class="question-flex-item">
-                {% for option in question.options %}
-                    <li class="listpad"><a href="{{url_for('quiz')}}/{{ p.question_num + 1 }}?aq={{ p.question_num }}&a={{ loop.index }}"><button type="button" class="button-19">{{ option }}</button></a></li>
-                {% endfor %}
-            </ul>
+{% set question = p.questions[p.question_num - 1] %}
+{% set solution_bird = question.options[question.solution] %}
+<p class="centerpad" style="font-size:24px; text-align: center;">
+    {{ p.question_num }}) Welcher Vogel ist das? 
+</p>
+<div class="question-flex">
+    <div class="question-flex-item actual-question">
+        {% if p.mode == "audio" %}
+        <div>
+            <img style="max-width: 100%" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].son }}" alt="Sonogram of the call of the bird" >
+            <audio controls loading="lazy" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].ruf }}"></audio><br>
         </div>
+        {% else %}
+        <img style="max-width: 100%" src="/static/birds/{{ solution_bird }}/{{ p.quiz_content.birds[solution_bird].img }}" alt="image of a bird" >
+        {% endif %}
     </div>
+    <ul class="question-flex-item">
+        {% for option in question.options %}
+            <li class="listpad"><a href="{{url_for('quiz')}}/{{ p.question_num + 1 }}?aq={{ p.question_num }}&a={{ loop.index }}"><button type="button" class="button-19">{{ option }}</button></a></li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
 {% block footer %}<!-- keeps footer from main template from showing -->{% endblock %}
 

@@ -10,17 +10,17 @@
 
 {% block nav %}<!-- keeps nav from main template from showing --> {% endblock %}
 {% block content %}
-    <div class="centerpad" >
-        {% for question in p.questions %}
-            <img class="centerpad" style="width: 20rem" src="/static/birds/{{ question.options[question.solution] }}/{{ p.quiz_content.birds[question.options[question.solution]].img }}" >
-                    {% if question.solution == question.answer %}
-                        <p class="center">Richtig! Es ist ein {{ question.options[question.solution] }}</p>
-                    {% else %}
-                        <p class="center">Schade! Es ist ein {{ question.options[question.solution] }} und deine Antwort war {{ question.options[question.answer] }}</p>
-                    {% endif %}
-                <hr>
-        {% endfor %}
-        <a href="{{ url_for('quiz_welcome') }}?clear=1"><button type="button" class="button-19"> Spiel nochmal?</button> </a>
-    </div>
+<div class="centerpad" >
+    {% for question in p.questions %}
+        <img class="centerpad" style="width: 20rem" src="/static/birds/{{ question.options[question.solution] }}/{{ p.quiz_content.birds[question.options[question.solution]].img }}" >
+                {% if question.solution == question.answer %}
+                    <p class="center">Richtig! Es ist ein {{ question.options[question.solution] }}</p>
+                {% else %}
+                    <p class="center">Schade! Es ist ein {{ question.options[question.solution] }} und deine Antwort war {{ question.options[question.answer] }}</p>
+                {% endif %}
+            <hr>
+    {% endfor %}
+    <a href="{{ url_for('quiz_welcome') }}?clear=1"><button type="button" class="button-19"> Spiel nochmal?</button> </a>
+</div>
 {% endblock %}
 {% block footer %}<!-- keeps footer from main template from showing -->{% endblock %}

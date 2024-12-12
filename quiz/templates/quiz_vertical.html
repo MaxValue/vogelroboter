@@ -10,15 +10,15 @@
 
 {% block nav %}<!-- keeps nav from main template from showing --> {% endblock %}
 {% block content %}
-    <img src="/static/birds/{{ p.questions.options[p.questions[p.question_num - 1].solution] }}/{{ p.quiz_content.birds[p.questions[p.question_num - 1].options[p.questions[p.question_num - 1].solution]].img }}" class="centerpad">
-    <p class="centerpad" style="font-size:24px">
-        {{ p.question_num }}) Welcher Vogel ist das? 
-    </p>
-    <ul class="centerpad">
-        {% for option in p.questions[p.question_num - 1].options %}
-            <li class="listpad"><a href="{{url_for('quiz')}}/{{ p.question_num + 1 }}?aq={{ p.question_num }}&a={{ loop.index }}">{{ option }}</a></li>
-        {% endfor %}
-    </ul>
+<img src="/static/birds/{{ p.questions.options[p.questions[p.question_num - 1].solution] }}/{{ p.quiz_content.birds[p.questions[p.question_num - 1].options[p.questions[p.question_num - 1].solution]].img }}" class="centerpad">
+<p class="centerpad" style="font-size:24px">
+    {{ p.question_num }}) Welcher Vogel ist das? 
+</p>
+<ul class="centerpad">
+    {% for option in p.questions[p.question_num - 1].options %}
+        <li class="listpad"><a href="{{url_for('quiz')}}/{{ p.question_num + 1 }}?aq={{ p.question_num }}&a={{ loop.index }}">{{ option }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 
