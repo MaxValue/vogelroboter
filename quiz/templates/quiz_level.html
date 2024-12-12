@@ -9,17 +9,15 @@
     How good are you with Vögel?
 </p>
 <form method="get" action="/quiz/1">
-<div class="question-flex">
-    <div class="question-flex-item actual-question level-selector">
+<div class="question-flex level-selector">
         {% if p.mode == 'img' %}
         <input type="radio" id="Beginner" name="level" value="Beginner" checked class="beginner" /><label for="Beginner"
-            class="button-19">Beginner</label>
+            class="question-flex-item button-19">Beginner</label>
         <input type="radio" id="Intermediate" name="level" value="Intermediate" class="intermediate" /><label for="Intermediate"
-            class="button-19">Intermediate</label>
+            class="question-flex-item button-19">Intermediate</label>
         <input type="radio" id="Expert" name="level" value="Expert" class="expert" /><label for="Expert"
-            class="button-19">Expert</label>
+            class="question-flex-item button-19">Expert</label>
         {% endif %}
-    </div>
 </div>
 <button type="submit" class="button-19 button-green"> Bereit? Auf los gehts los!</button>
 </form>
